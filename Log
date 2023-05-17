@@ -12,3 +12,8 @@ Week 19 update:
 - population density not working yet, getting negative sums of population per some bufferzones.
 - got the three-way-intersections after 68 hours of execution time, intersection density working now too.
 - street density almost done too, but they seem to be inflated when looking at the 'street_density_km' from ox.stats.basic_stats.
+
+Week 20:
+- Updated the construction of the population grid by implementing the right CRS and reprojecting the extracted GeoTIFF for the city_grids_format function. 
+Updated the population density, but still getting some negative values due to no-data within buffers. Also updated the network density measures. 
+Besides getting the right area of the network now, density values are still unrealistic.
