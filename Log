@@ -23,4 +23,8 @@ Week 20 update (friday):
 - The other densities such as the intersection density and street density should be done this weekend.
 - Also working on retrieving more distance variables this weekend.
 
+Week 20 update (saturday):
+- Nearest_node optimalisation done for distance calculations and for the truncation needed to get network statistics.
+I vectorized the code instead of using for-loop iterations. Speed is 12x faster now.
+
 
