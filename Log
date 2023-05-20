@@ -28,5 +28,6 @@ Week 20 update (saturday):
 I vectorized the code instead of using for-loop iterations. Speed is MUCH faster now.
 - Worked on optimizing the retrieval of street networks via truncation, however, retrieval via truncation seems to be slower than retrieval via 
 the 'ox.graph_from_point' function, no matter what I try.
+- Will also enhance this log tomorrow to make it look better.
 
 
