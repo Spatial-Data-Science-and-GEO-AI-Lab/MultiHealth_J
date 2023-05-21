@@ -30,5 +30,9 @@ I vectorized the code instead of using for-loop iterations. Speed is MUCH faster
 the 'ox.graph_from_point' function, no matter what I try.
 - Will also enhance this log tomorrow to make it look better.
 
+Week 20 update (sunday):
+- Spent hours on vectorization optimalisation for distance calculations to for example bus stops. It is MUCH faster now. 100K rows in 26 mins on my crappy macbook.
+- Truncation still not, will work on optimizing tomorrow again.
+
 
 
