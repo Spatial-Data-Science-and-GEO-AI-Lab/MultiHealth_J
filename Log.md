@@ -1,6 +1,6 @@
 |Week|Progress
 |-|-
-|1| - Worked on it from wednesday afternoon due to personal issues monday and tuesday.
+|1|- Worked on it from wednesday afternoon due to personal issues monday and tuesday.
 ||- Tried to get the amount of intersections per grid by getting a small street network per grid centroid and then extracting the right statistic.
 ||- The code should now definitely work but it is still running after 16 hours.
 ||- three-way intersections seemed to be false when calculated with 'basic_stats', but not with 'count_streets_per_node'.
