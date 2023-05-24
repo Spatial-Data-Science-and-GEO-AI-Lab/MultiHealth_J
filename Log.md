@@ -23,3 +23,10 @@
 ||- Will also enhance this log tomorrow to make it look better.
 ||- Spent hours on vectorization optimalisation for distance calculations to for example bus stops. It is MUCH faster now. 100K rows in 26 mins on my crappy ||macbook.
 ||- Truncation still not, will work on optimizing tomorrow again.
+|21|-Finally fixed the distance calculation optimalisations with vectorization and faster loops.
+||- Working on optimizing the retrieval of street networks per grid. Truncation is not the play so am focusing on getting the networks per polygon or point.
+||- Also trying another CRS (32630) for the population statistics, due to the population size and area per grid bufferzone still looking a bit unrealistic at a lot of points. 
+||- CRS 32630 made no difference, so leaving CRS 27700.
+||- Finally made lots of progress of extracting the street networks per grid in a relatively fast and efficient way. Now extracting subgraphs from the whole street network.
+||- The statistics and area per street network also work. However, the density statistics are still not realistic.
+
