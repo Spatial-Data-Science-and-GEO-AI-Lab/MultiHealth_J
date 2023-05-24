@@ -1,6 +1,7 @@
 |Week|Progress
 |-|-
-|1|- Worked on it from wednesday afternoon due to personal issues monday and tuesday.
+|18|Read the provided papers to get familiar with the topic and its context.
+|19|- Worked on it from wednesday afternoon due to personal issues monday and tuesday.
 ||- Tried to get the amount of intersections per grid by getting a small street network per grid centroid and then extracting the right statistic.
 ||- The code should now definitely work but it is still running after 16 hours.
 ||- three-way intersections seemed to be false when calculated with 'basic_stats', but not with 'count_streets_per_node'.
@@ -13,3 +14,15 @@
 ||- population density not working yet, getting negative sums of population per some bufferzones.
 ||- got the three-way-intersections after 68 hours of execution time, intersection density working now too.
 ||- street density almost done too, but they seem to be inflated when looking at the 'street_density_km' from ox.stats.basic_stats.
+|20|- Updated the construction of the population grid by implementing the right CRS and reprojecting the extracted GeoTIFF for the city_grids_format ||function. Updated the population density, but still getting some negative values due to no-data within buffers. Also updated the network density measures. 
+||Besides getting the right area of the network now, density values are still unrealistic.
+||- Still having trouble removing the parts from the buffers that overlap with regions containing no population data.
+||- The other densities such as the intersection density and street density should be done this weekend.
+||- Also working on retrieving more distance variables this weekend.
+||- After hours of trying, nearest_node optimalisation done for distance calculations and for the truncation needed to get the street network.
+||I vectorized the code instead of using for-loop iterations. Speed is MUCH faster now.
+||- Worked on optimizing the retrieval of street networks via truncation, however, retrieval via truncation seems to be slower than retrieval via 
+||the 'ox.graph_from_point' function, no matter what I try.
+||- Will also enhance this log tomorrow to make it look better.
+||- Spent hours on vectorization optimalisation for distance calculations to for example bus stops. It is MUCH faster now. 100K rows in 26 mins on my crappy ||macbook.
+||- Truncation still not, will work on optimizing tomorrow again.
