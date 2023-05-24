@@ -7,7 +7,9 @@
 ||- Worked on getting the population density per grid bufferzone.
 ||- Also tried working on computational efficiency optimization, but to no avail. The 'multiprocessing' package does not work with Jupyter Notebook          ||it seems, so I might have to use another IDE or something. 
 ||- I did read that putting operations in functions and applying the function the each row of the data with apply() works faster than looping
-||through the |dataset and doing operations on it that way, so I altered my code for the intersection extractions.
+||through the dataset and doing operations on it that way, so I altered my code for the intersection extractions.
 ||- Also helped Sander with code for the distance calculations.
 ||- Will work on it this weekend to try and get more density statistics such as the intersection density per grid and possibly the street density. 
-|2|In progress
+||- population density not working yet, getting negative sums of population per some bufferzones.
+||- got the three-way-intersections after 68 hours of execution time, intersection density working now too.
+||- street density almost done too, but they seem to be inflated when looking at the 'street_density_km' from ox.stats.basic_stats.
