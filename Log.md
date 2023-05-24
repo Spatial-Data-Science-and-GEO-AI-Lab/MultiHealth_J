@@ -11,4 +11,3 @@
 ||- Also helped Sander with code for the distance calculations.
 ||- Will work on it this weekend to try and get more density statistics such as the intersection density per grid and possibly the street density. 
 |2|In progress
-|3|Not started
