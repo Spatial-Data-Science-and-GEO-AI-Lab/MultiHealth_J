@@ -29,4 +29,7 @@
 ||- CRS 32630 made no difference, so leaving CRS 27700.
 ||- Finally made lots of progress of extracting the street networks per grid in a relatively fast and efficient way. Now extracting subgraphs from the whole street network.
 ||- The statistics and area per street network also work. However, the density statistics are still not realistic.
+||- Finally got the multiprocessing to work. I created a python venv on my desktop and used VS Code as i had to use regular .py files for multiprocessing to work.
+||- Now also got multiprocessing to work with the package multiprocess. It still seems to be not 100% consistent so it might have to do with the IPython kernel.
+||- Will run the multiprocesses tomorrow (monday) on the whole dataset, as getting subgraphs and subgraph statistics will now finally be doable time-wise. 
 
