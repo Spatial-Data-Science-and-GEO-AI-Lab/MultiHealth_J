@@ -1,5 +1,6 @@
 # Packages
 # system packages
+import pickle
 import gc
 import sys
 import time
@@ -62,7 +63,7 @@ buffersub = bufferintersect_gdf[0:999].geometry
 # use multiprocessing to split the task of calculating the subgraphs over the 8 logical cores on my pc (threads)
 if __name__ == '__main__':
     start_time = time.time()
-    subgraph_list = Parallel(n_jobs=-1, backend="threading")(delayed(get_subgraph)(Gproj, Gproj_nodes, polygon) for polygon in buffersub)
+    subgraph_list = Parallel(n_jobs=-1, backend="threading")(delayed(get_subgraph)(Gproj, Gproj_nodes, polygon) for polygon in bufferintersect_gdf.geometry)
     end_time = time.time()
     execution_time = end_time - start_time
     print(f"Execution time: {execution_time} seconds")
@@ -99,3 +100,7 @@ if __name__ == '__main__':
     end_time = time.time()
     execution_time = end_time - start_time
     print(f"Execution time: {execution_time} seconds")
+
+# saving stats per subgraph
+subgraph_stats = pd.DataFrame(subgraph_stats)
+subgraph_stats.to_pickle("subgraph_stats.pkl")
