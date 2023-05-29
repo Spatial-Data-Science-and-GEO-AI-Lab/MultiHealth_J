@@ -33,4 +33,5 @@
 ||- Now also got multiprocessing to work with the package multiprocess. It still seems to be not 100% consistent so it might have to do with the IPython kernel.
 ||- Will run the multiprocesses tomorrow (monday) on the whole dataset, as getting subgraphs and subgraph statistics will now finally be doable time-wise.
 |22|- As it turned out, multiprocessing did not work consistently and still does not. The weird thing is that the kernel crashes when initializing the parallelization with all cores, but does not when i start off with less cores and then after that initialize it with all cores. It does not matter whether I use joblib or multiprocessing.
+||- Fixed it now temporarily by initializing a parallelization process with 2 threads for just one row before applying it to the whole dataframe. For some reason this initialization is enough. I suppose the 'workers' just have to be initialized somewhat, although this is not present in the documentation or anywhere online. 
 
