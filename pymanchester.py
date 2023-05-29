@@ -79,7 +79,9 @@ def get_subgraph_area(subgraph):
 
 # use multiprocessing
 if __name__ == '__main__':
+    # initialize with less threads due to kernel crashing
     subgraph_area = Parallel(n_jobs=2, prefer="threads")(delayed(get_subgraph_area)(subgraph) for subgraph in subgraph_list[0:1])
+    # all cores
     start_time = time.time()
     subgraph_area = Parallel(n_jobs=-1, prefer="threads")(delayed(get_subgraph_area)(subgraph) for subgraph in subgraph_list)
     end_time = time.time()
@@ -97,7 +99,9 @@ def get_stats(subgraph, area):
 
 # use multiprocessing
 if __name__ == '__main__':
+    # initialize with less threads due to kernel crashing
     subgraph_stats = Parallel(n_jobs=2, prefer="threads")(delayed(get_stats)(subgraph, area) for subgraph, area in islice(zip(subgraph_list, subgraph_area), 0, 1))
+    # all cores
     start_time = time.time()
     subgraph_stats = Parallel(n_jobs=-1, prefer="threads")(delayed(get_stats)(subgraph, area) for subgraph, area in zip(subgraph_list, subgraph_area))
     end_time = time.time()
