@@ -1,5 +1,6 @@
 # Packages
 # system packages
+from itertools import islice
 import pickle
 import gc
 import sys
@@ -57,13 +58,13 @@ def get_subgraph(Gproj, Gproj_nodes, polygon):
 # get nodes from the Gproj
 Gproj_nodes = ox.graph_to_gdfs(Gproj, edges=False)
 
-# buffer polygon variables
-buffersub = bufferintersect_gdf[0:999].geometry
-
 # use multiprocessing to split the task of calculating the subgraphs over the 8 logical cores on my pc (threads)
 if __name__ == '__main__':
+    # initialize with less threads due to kernel crashing
+    subgraph_list = Parallel(n_jobs=2, prefer="threads")(delayed(get_subgraph)(Gproj, Gproj_nodes, polygon) for polygon in bufferintersect_gdf[0:1].geometry)
+    # all cores
     start_time = time.time()
-    subgraph_list = Parallel(n_jobs=-1, backend="threading")(delayed(get_subgraph)(Gproj, Gproj_nodes, polygon) for polygon in bufferintersect_gdf.geometry)
+    subgraph_list = Parallel(n_jobs=-1, prefer="threads")(delayed(get_subgraph)(Gproj, Gproj_nodes, polygon) for polygon in bufferintersect_gdf[0:499].geometry)
     end_time = time.time()
     execution_time = end_time - start_time
     print(f"Execution time: {execution_time} seconds")
@@ -78,8 +79,9 @@ def get_subgraph_area(subgraph):
 
 # use multiprocessing
 if __name__ == '__main__':
+    subgraph_area = Parallel(n_jobs=2, prefer="threads")(delayed(get_subgraph_area)(subgraph) for subgraph in subgraph_list[0:1])
     start_time = time.time()
-    subgraph_area = Parallel(n_jobs=-1, backend="threading")(delayed(get_subgraph_area)(subgraph) for subgraph in subgraph_list)
+    subgraph_area = Parallel(n_jobs=-1, prefer="threads")(delayed(get_subgraph_area)(subgraph) for subgraph in subgraph_list)
     end_time = time.time()
     execution_time = end_time - start_time
     print(f"Execution time: {execution_time} seconds")
@@ -95,8 +97,9 @@ def get_stats(subgraph, area):
 
 # use multiprocessing
 if __name__ == '__main__':
+    subgraph_stats = Parallel(n_jobs=2, prefer="threads")(delayed(get_stats)(subgraph, area) for subgraph, area in islice(zip(subgraph_list, subgraph_area), 0, 1))
     start_time = time.time()
-    subgraph_stats = Parallel(n_jobs=-1, backend="threading")(delayed(get_stats)(subgraph, area) for subgraph, area in zip(subgraph_list, subgraph_area))
+    subgraph_stats = Parallel(n_jobs=-1, prefer="threads")(delayed(get_stats)(subgraph, area) for subgraph, area in zip(subgraph_list, subgraph_area))
     end_time = time.time()
     execution_time = end_time - start_time
     print(f"Execution time: {execution_time} seconds")
