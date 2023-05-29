@@ -1,5 +1,6 @@
 # Packages
 # system packages
+import gc
 import sys
 import time
 import warnings
@@ -7,7 +8,7 @@ import os
 from collections import Counter
 
 # non-geo numeric packages
-from multiprocessing.pool import ThreadPool
+from joblib import Parallel, delayed
 import matplotlib.pyplot as plt
 import numpy as np
 import math
@@ -56,18 +57,15 @@ def get_subgraph(Gproj, Gproj_nodes, polygon):
 Gproj_nodes = ox.graph_to_gdfs(Gproj, edges=False)
 
 # buffer polygon variables
-buffersub = bufferintersect_gdf[0:9999].geometry
+buffersub = bufferintersect_gdf[0:999].geometry
 
 # use multiprocessing to split the task of calculating the subgraphs over the 8 logical cores on my pc (threads)
 if __name__ == '__main__':
-    with ThreadPool(8) as p:
-        start_time = time.time()
-        subgraph_list = p.starmap(get_subgraph, ((Gproj, Gproj_nodes, polygon) for polygon in buffersub))
-        p.close()
-        p.join()
-        end_time = time.time()
-        execution_time = end_time - start_time
-        print(f"Execution time: {execution_time} seconds")
+    start_time = time.time()
+    subgraph_list = Parallel(n_jobs=-1, backend="threading")(delayed(get_subgraph)(Gproj, Gproj_nodes, polygon) for polygon in buffersub)
+    end_time = time.time()
+    execution_time = end_time - start_time
+    print(f"Execution time: {execution_time} seconds")
 
 # getting the basic stats of every subgraph by turning the subgraph into a gdf, turning that into 
 # one polygon and getting its area
@@ -79,14 +77,11 @@ def get_subgraph_area(subgraph):
 
 # use multiprocessing
 if __name__ == '__main__':
-    with ThreadPool(8) as p:
-        start_time = time.time()
-        subgraph_area = p.map(get_subgraph_area, subgraph_list)
-        p.close()
-        p.join()
-        end_time = time.time()
-        execution_time = end_time - start_time
-        print(f"Execution time: {execution_time} seconds")
+    start_time = time.time()
+    subgraph_area = Parallel(n_jobs=-1, backend="threading")(delayed(get_subgraph_area)(subgraph) for subgraph in subgraph_list)
+    end_time = time.time()
+    execution_time = end_time - start_time
+    print(f"Execution time: {execution_time} seconds")
 
 # get the statistics from each subgraph and area and accounting for the errors that might occur due
 # to a graph having no edges and giving a ValueError or due to the area being zero because the area
@@ -99,11 +94,8 @@ def get_stats(subgraph, area):
 
 # use multiprocessing
 if __name__ == '__main__':
-    with ThreadPool(8) as p:
-        start_time = time.time()
-        subgraph_area = p.starmap(get_stats, ((subgraph, area) for subgraph, area in zip(subgraph_list, subgraph_area)))
-        p.close()
-        p.join()
-        end_time = time.time()
-        execution_time = end_time - start_time
-        print(f"Execution time: {execution_time} seconds")
+    start_time = time.time()
+    subgraph_stats = Parallel(n_jobs=-1, backend="threading")(delayed(get_stats)(subgraph, area) for subgraph, area in zip(subgraph_list, subgraph_area))
+    end_time = time.time()
+    execution_time = end_time - start_time
+    print(f"Execution time: {execution_time} seconds")
