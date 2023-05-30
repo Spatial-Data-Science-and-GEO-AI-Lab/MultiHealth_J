@@ -1,7 +1,8 @@
 |Week|Progress
 |-|-
 |17|Read the provided papers to get familiar with the topic and its context.
-|18|- Retrieved the population for 100 by 100 meter grid cells of Greater Manchester by using and altering functions written by Bart.
+|18|- Retrieved the population for 100 by 100 meter grid cells of Greater Manchester by using GEE and OSMNX and using and altering functions from Bart.
+||- Familiarized myself with OSMNX to work with street networks and retrieve geometries such as bus stops and restaurants.
 |19|- Worked on it from wednesday afternoon due to personal issues monday and tuesday.
 ||- Tried to get the amount of intersections per grid by getting a small street network per grid centroid and then extracting the right statistic.
 ||- The code should now definitely work but it is still running after 16 hours.
