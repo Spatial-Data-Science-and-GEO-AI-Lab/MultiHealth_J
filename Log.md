@@ -37,4 +37,5 @@
 |22|- As it turned out, multiprocessing did not work consistently and still does not. The weird thing is that the kernel crashes when initializing the parallelization with all cores, but does not when i start off with less cores and then after that initialize it with all cores. It does not matter whether I use joblib or multiprocessing.
 ||- Fixed it now temporarily by initializing a parallelization process with 2 threads for just one row before applying it to the whole dataframe. For some reason this initialization is enough. I suppose the 'workers' just have to be initialized somewhat, although this is not present in the documentation or anywhere online. 
 ||- I am letting the script run the whole day to retrieve the statistics for each grid street network. I will further work on extracting the NDVI and LST values and I will also work on further optimizing the code since the multiprocessing does not seem to work for the distance calculations.
+||- Got the multiprocessing working for the distance calculations. I had to parallelize the gpd.distance for the nearest bus stop for each grid polygon.
 
