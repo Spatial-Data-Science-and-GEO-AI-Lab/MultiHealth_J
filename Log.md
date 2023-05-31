@@ -38,4 +38,4 @@
 ||- Fixed it now temporarily by initializing a parallelization process with 2 threads for just one row before applying it to the whole dataframe. For some reason this initialization is enough. I suppose the 'workers' just have to be initialized somewhat, although this is not present in the documentation or anywhere online. 
 ||- I am letting the script run the whole day to retrieve the statistics for each grid street network. I will further work on extracting the NDVI and LST values and I will also work on further optimizing the code since the multiprocessing does not seem to work for the distance calculations.
 ||- Got the multiprocessing working for the distance calculations. I had to parallelize the gpd.distance for the nearest bus stop for each grid polygon.
-
+||- Finally got all the network basic statisticd. Converted them to dataframe, removed the columns with too many missing values and lastly concatenated them with the main geodataframe.
