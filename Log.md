@@ -49,4 +49,4 @@
 ||- Cleaner script from the previous clustering script, now with both GMM and Kmeans plots with 9 clusters and removes the rest. 
 ||- Now did a spatial join with the health dataset, calculated the cluster majority and diversity (not shannon, needs to be done). Lastly visualized them neatly. 
 ||- Updated version with shannon entropy, health outcome plots and a correlation table between the cluster majority and diversity and health outcome data. 
-||- Added kruskal-wallis tests for the nominal cluster majority variable due to it being nominal so not suited for correlations. To get some insights I wanted to see the distributions of the health outcomes for each of the cluster majority values.
+||- Added kruskal-wallis tests for the nominal cluster majority variable due to it being nominal so not suited for correlations. To get some insights I wanted to see the distributions of the health outcomes for each of the cluster majority values. Also added contingency tables for further inspection.
