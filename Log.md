@@ -50,3 +50,6 @@
 ||- Now did a spatial join with the health dataset, calculated the cluster majority and diversity (not shannon, needs to be done). Lastly visualized them neatly. 
 ||- Updated version with shannon entropy, health outcome plots and a correlation table between the cluster majority and diversity and health outcome data. 
 ||- Added kruskal-wallis tests for the nominal cluster majority variable due to it being nominal so not suited for correlations. To get some insights I wanted to see the distributions of the health outcomes for each of the cluster majority values. Also added contingency tables for further inspection.
+||- Added histogram density plots for all of the clustervariables within Kmeans cluster 0 and 4, and GMM clusters 0 and 6. This is because I found that pre-mortality and morbidity are highest in Kmeans cluster 0 and in GMM cluster 6, and that mental health issues are highest in Kmeans cluster 4 and GMM cluster.
+||- Now also added regular distribution plots to compare with.
+||- Now also added additional cluster 2 to the histograms due to cluster 2 also showing higher pre-mortality and morbidity values.
