@@ -54,4 +54,4 @@
 ||- Now also added regular distribution plots to compare with.
 ||- Now also added additional cluster 2 to the histograms due to cluster 2 also showing higher pre-mortality and morbidity values.
 |24|- Did 7, 9 and 11 cluster analyses for both GMM and KMeans. I did both because I did find GMM to contain more convincing mental health results for 9 clusters than K-means. But the main problem is that for 7 and 11 clusters, both models produce majority cluster labels to which not even 5 neighborhoods are attributed to which are not very useful.
-||- As for the writing, I will continue and finish the introduction tomorrow. I had some troubles with hayfever attacks yesterday and today (and the past weekend..), and I had to take my cat to the vet today due to him having a bladder infection, this took quite some time unfortunately.
+||- As for the writing, I will continue and finish the introduction tomorrow. I had some troubles with hayfever attacks yesterday and today (and the past weekend..), and I had to take my cat to the vet today due to him having a bladder infection, together this took quite some time (and quite some energy) unfortunately.
