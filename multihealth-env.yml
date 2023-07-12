@@ -1,4 +1,4 @@
-name: ssml
+name: multihealth-env
 channels:
   - conda-forge
   - defaults
@@ -523,4 +523,4 @@ dependencies:
       - uritemplate==4.1.1
       - wpgpdownload==0.2.1
       - xgboost==1.7.5
-prefix: /Users/Julian/opt/anaconda3/envs/ssml
+prefix: /Users/Julian/opt/anaconda3/envs/multihealth-env
