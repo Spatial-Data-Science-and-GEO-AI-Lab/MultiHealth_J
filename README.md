@@ -21,6 +21,7 @@ When running the project in Google Colab, make sure you:
   <li>Upload them to the main '/content' folder, to make sure the path that is created in the notebook is still correct</li>
   <li>install the following packages:</li>
   <li>
+    
     ```python
     %pip install osmnx
     %pip install geemap
@@ -29,6 +30,7 @@ When running the project in Google Colab, make sure you:
     %pip install rioxarray
     %pip install pylandtemp
     ```
+    
   </li>
 </ol>
 
