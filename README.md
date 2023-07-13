@@ -17,7 +17,7 @@ Research regarding the effect of urban and environmental exposures on health out
 When running the project in a local environment, make sure you:
 
 <ol>
-  <li>Create an empty working directory for the 'gridcreation.ipynb' and healthenvironment_relation.ipynb' notebook files and the 'iso_countries.xlsx' and 'country_iso_path+'cities.xlsx' files in</li>
+  <li>Create an empty working directory for the 'gridcreation.ipynb' and healthenvironment_relation.ipynb' notebook files and the 'iso_countries.xlsx' and 'country_iso_path+'cities.xlsx' files</li>
   <li>Download the required environment YAML file from the repository and install it by opening the windows command prompt or mac terminal and execute the following command:
   
   ```
