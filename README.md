@@ -19,18 +19,17 @@ When running the project in Google Colab, make sure you:
 <ol>
   <li>Download the 'iso_countries.xlsx' and 'country_iso_path+'cities.xlsx' files</li>
   <li>Upload them to the main '/content' folder, to make sure the path that is created in the notebook is still correct</li>
-</ol>
-<ol>
-  <li>install the following packages:
+  <li>install the following packages before importing the listed packages in the notebook:
     
-    ```%pip install osmnx
-    %pip install geemap
-    %pip install rasterstats
-    %pip install libpysal
-    %pip install rioxarray
-    %pip install pylandtemp
-    ``` 
-    
+  ```python  
+  %pip install osmnx
+  %pip install geemap
+  %pip install rasterstats
+  %pip install libpysal
+  %pip install rioxarray
+  %pip install pylandtemp 
+  ```
+
   </li>
 </ol>
 
