@@ -23,8 +23,7 @@ When running the project in Google Colab, make sure you:
 <ol>
   <li>install the following packages:
     
-    ```
-    %pip install osmnx
+    ```%pip install osmnx
     %pip install geemap
     %pip install rasterstats
     %pip install libpysal
