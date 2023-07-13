@@ -7,6 +7,9 @@ Research regarding the effect of urban and environmental exposures on health out
 - [Environment setup](#Environment-setup)
   - [Using Google Colab](#Using-Google-Colab)
   - [Using a local environment](#Using-a-local-environment)
+- [Workflow elaboration](#Workflow-elaboration)
+  - [Data collection](#Data-collection)
+  - [Data modeling](#Data-modeling) 
 
 
 
