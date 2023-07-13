@@ -13,7 +13,7 @@ Research regarding the effect of urban and environmental exposures on health out
  
 ## Setting up the environment
 
-### Running in Google Colab
+### Using Google Colab
 When running the project in Google Colab, make sure you:
 
 <ol>
