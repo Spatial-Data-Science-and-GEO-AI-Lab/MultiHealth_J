@@ -11,7 +11,7 @@ Research regarding the effect of urban and environmental exposures on health out
   - [Data collection](#Data-collection)
   - [Data modeling](#Data-modeling)
  
-## Setting up the environment
+## Environment setup
 
 ### Using a local environment
 When running the project in a local environment, make sure you:
