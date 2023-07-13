@@ -21,17 +21,28 @@ When running the project in a local environment, make sure you:
   <li>Download the required environment YAML file from the repository and install it by opening the windows command prompt or mac terminal and execute the following command:
   
 
-  ```bash
+  ```
   conda env create -f multihealth-env.yml
   ```
 
   
   </li>
-  <li>Activate the newly created conda environment by executing the following command:
-
+  <li>Activate the newly created conda environment by executing the following command: 
   
-  ```bash
+  ```
   conda activate multihealth-env
+  ```
+
+  </li>
+  <li>Alternatively, if you are not a fan of conda, you can use the requirements.txt file from the repository for the installation of the required packages and put this file in the created working directory. Then, open a commmand prompt or a mac terminal, navigate to the working directory by executing this command:
+  
+  ```
+  cd path/to/working/directory
+  ```
+Then, to install the required packages from the text file, execute this command:
+  
+  ```
+  pip install -r requirements.txt
   ```
 
   </li>
