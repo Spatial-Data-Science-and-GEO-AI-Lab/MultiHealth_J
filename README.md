@@ -20,12 +20,10 @@ When running the project in a local environment, make sure you:
   <li>Create an empty working directory for the 'gridcreation.ipynb' and healthenvironment_relation.ipynb' notebook files and the 'iso_countries.xlsx' and 'country_iso_path+'cities.xlsx' files in</li>
   <li>Download the required environment YAML file from the repository and install it by opening the windows command prompt or mac terminal and execute the following command:
   
-
   ```
   conda env create -f multihealth-env.yml
   ```
-
-  
+ 
   </li>
   <li>Activate the newly created conda environment by executing the following command: 
   
@@ -39,6 +37,7 @@ When running the project in a local environment, make sure you:
   ```
   cd path/to/working/directory
   ```
+
 Then, to install the required packages from the text file, execute this command:
   
   ```
