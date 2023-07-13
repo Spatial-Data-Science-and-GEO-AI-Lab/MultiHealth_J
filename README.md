@@ -18,8 +18,8 @@ When running the project in Google Colab, make sure you:
 
 <ol>
   <li>Download the 'iso_countries.xlsx' and 'country_iso_path+'cities.xlsx' files</li>
-  <li>Upload them to the main '/content' folder, to make sure the path that is created in the notebook is still correct</li>
-  <li>install the following packages before importing the listed packages in the notebook:
+  <li>Upload them to the main '/content' folder, to make sure the path that is created in the notebook is still functional</li>
+  <li>Install the following packages before importing the listed packages in the notebook:
     
   ```python  
   %pip install osmnx
