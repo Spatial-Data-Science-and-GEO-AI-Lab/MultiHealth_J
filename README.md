@@ -34,7 +34,7 @@ When running the project in a local environment, make sure you:
   ```
 
   </li>
-  <li>Alternatively, if you are not a fan of conda, you can use the requirements.txt file from the repository for the installation of the required packages and put this file in the created working directory. Then, open a commmand prompt or a mac terminal, navigate to the working directory by executing this command:
+  <li>Alternatively, if you are not a fan of conda and know how to work with a local Python virtual environment, you can use the requirements.txt file from the repository for the installation of the required packages and put this file in the created working directory. Then, open a command prompt or a mac terminal, navigate to the working directory by executing this command:
   
   ```
   cd path/to/working/directory
