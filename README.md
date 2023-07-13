@@ -9,7 +9,28 @@ Research regarding the effect of urban and environmental exposures on health out
   - [Using a local environment](#Using-a-local-environment)
 - [Workflow elaboration](#Workflow-elaboration)
   - [Data collection](#Data-collection)
-  - [Data modeling](#Data-modeling) 
+  - [Data modeling](#Data-modeling)
+ 
+## Setting up the environment
+
+### Running in Google Colab
+When running the project in Google Colab, make sure you:
+
+<ol>
+  <li>Download the 'iso_countries.xlsx' and 'country_iso_path+'cities.xlsx' files</li>
+  <li>Upload them to the main '/content' folder, to make sure the path that is created in the notebook is still correct</li>
+  <li>install the following packages:</li>
+  <li>
+    ```python
+    %pip install osmnx
+    %pip install geemap
+    %pip install rasterstats
+    %pip install libpysal
+    %pip install rioxarray
+    %pip install pylandtemp
+    ```
+  </li>
+</ol>
 
 
 
