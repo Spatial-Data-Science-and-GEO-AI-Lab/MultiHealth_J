@@ -41,7 +41,7 @@ When running the project in a local environment, make sure you:
 When running the project in Google Colab, make sure you:
 
 <ol>
-  <li>Download the 'iso_countries.xlsx' and 'country_iso_path+'cities.xlsx' files</li>
+  <li>Download the 'iso_countries.xlsx' and 'country_iso_path+'cities.xlsx' files from this repository</li>
   <li>Upload them to the main '/content' folder, to make sure the path that is created in the notebook is still functional</li>
   <li>Install the following packages before importing the listed packages in the notebook:
     
